@@ -24,7 +24,8 @@ repositories:
 "#;
 
 fn main() -> Result<()> {
-    let gh = GitHub::new().unwrap();
+    // let gh = GitHub::new().unwrap();
+    let gh = GitHub::custom("https://api.github.com", Some("GITHUB_TOKEN".to_string())).unwrap();
     let config: Config = serde_yaml::from_str(CONFIG)?;
     let result = gh.get_events(&config, 24 * 300);
 

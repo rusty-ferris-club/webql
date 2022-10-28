@@ -1,5 +1,6 @@
 # webql
-
+[![Crates.io](https://img.shields.io/crates/v/webql?style=flat-square)](https://crates.io/crates/webql)
+[![CI](https://github.com/rusty-ferris-club/webql/actions/workflows/ci.yaml/badge.svg)](https://github.com/rusty-ferris-club/webql/actions/workflows/ci.yaml)
 WebQL is a library that allows to get data from multiple resources or JSON and filter the result.
 
 ## Usage 

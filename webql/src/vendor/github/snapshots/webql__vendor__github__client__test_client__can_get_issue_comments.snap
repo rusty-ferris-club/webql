@@ -1,0 +1,20 @@
+---
+source: webql/src/vendor/github/client.rs
+expression: "gh.get_issue_comments(1, \"rusty-ferris-club\", \"webql\", time)"
+---
+Ok(
+    [
+        Object {
+            "id": Number(1),
+        },
+        Object {
+            "id": Number(2),
+        },
+        Object {
+            "id": Number(3),
+        },
+        Object {
+            "id": Number(4),
+        },
+    ],
+)

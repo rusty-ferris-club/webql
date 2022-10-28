@@ -1,0 +1,5 @@
+---
+source: webql/src/jfilter.rs
+expression: "is_match_array(&vec![Value :: String(\"val\".to_string()), Value ::\n            String(\"value-contains\".to_string())], &filter)"
+---
+true

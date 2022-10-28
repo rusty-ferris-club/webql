@@ -1,19 +1,11 @@
-# webql
-
-WebQL is a library that allows to get data from multiple resources or JSON and filter the result.
-
-## Usage 
-```toml
-[dependencies]
-webql = { version = "0.1.0", features = ["github] }
-```
-
-* Enable `github` feature flag for filter pull request data.
-
-# Examples
-```rs
 use serde_json::json;
-let json = json!({
+use webql::{
+    data::{Filter, Operation},
+    jfilter,
+};
+
+fn main() {
+    let json = json!({
         "url": "https://github.com/rusty-ferris-club/webql",
         "body": "some example",
         "labels": [
@@ -29,11 +21,23 @@ let json = json!({
         }
     });
     let filters = vec![
+        // extract `kaplanelad` value from user -> login json pah and check if the value equal to
+        // one of the given filter values
         Filter {
             query: r#""user"."login""#.to_string(),
             operation: Operation::Equal,
             values: vec!["kaplanelad".to_string()],
         },
+        // extract `https://github.com/rusty-ferris-club/webql` value from url json key and check if the value equal to
+        // one of the given filter values
+        Filter {
+            query: r#""url""#.to_string(),
+            operation: Operation::Equal,
+            values: vec!["https://github.com/rusty-ferris-club/webql".to_string()],
+        },
+        // extract `[label-1, label-2]` values from labels array and get all name values. check if
+        // one of the values filter is equal to one of the name values one of the given
+        // filter values
         Filter {
             query: r#""labels"|={"name"}."name""#.to_string(),
             operation: Operation::Equal,
@@ -45,13 +49,6 @@ let json = json!({
             values: vec!["example".to_string()],
         },
     ];
-    jfilter::is_match_filters(&json, &filters)
-```
 
-[All the examples here](./example/README.MD)
-
-# Thanks
-To all [Contributors](https://github.com/rusty-ferris-club/webql/graphs/contributors) - you make this happen, thanks!
-
-# Copyright
-Copyright (c) 2022 [@kaplanelad](https://github.com/kaplanelad). See [LICENSE](LICENSE.txt) for further details.
+    println!("{:?}", jfilter::is_match_filters(&json, &filters));
+}

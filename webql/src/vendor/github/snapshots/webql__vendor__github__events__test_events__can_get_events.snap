@@ -1,0 +1,61 @@
+---
+source: webql/src/vendor/github/events.rs
+expression: "gh.get_events(&config, 10)"
+---
+Ok(
+    [
+        Event {
+            kind: PrComment,
+            id: "1",
+            parent_event_id: Some(
+                "1",
+            ),
+            name: "",
+            link: Some(
+                "https://rusty-ferris-club/webql/pulls/1",
+            ),
+            date: None,
+            priority: 1,
+            row_data: Object {
+                "id": Number(1),
+                "html_url": String("https://rusty-ferris-club/webql/pulls/1"),
+                "body": String(""),
+            },
+        },
+        Event {
+            kind: PrEvent,
+            id: "1",
+            parent_event_id: Some(
+                "1",
+            ),
+            name: "name",
+            link: None,
+            date: None,
+            priority: 1,
+            row_data: Object {
+                "id": Number(1),
+                "event": String("name"),
+            },
+        },
+        Event {
+            kind: PR,
+            id: "1",
+            parent_event_id: None,
+            name: "pr 1",
+            link: Some(
+                "https://rusty-ferris-club/webql/pulls/1",
+            ),
+            date: None,
+            priority: 1,
+            row_data: Object {
+                "number": Number(1),
+                "html_url": String("https://rusty-ferris-club/webql/pulls/1"),
+                "title": String("pr 1"),
+                "body": String(""),
+                "user": Object {
+                    "login": String(""),
+                },
+            },
+        },
+    ],
+)

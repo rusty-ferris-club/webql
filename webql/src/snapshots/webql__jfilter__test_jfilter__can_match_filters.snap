@@ -1,0 +1,7 @@
+---
+source: webql/src/jfilter.rs
+expression: "is_match_filters(&json, &filter)"
+---
+Ok(
+    true,
+)

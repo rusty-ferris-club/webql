@@ -1,0 +1,20 @@
+---
+source: webql/src/vendor/github/client.rs
+expression: "gh.get_all_prs(\"rusty-ferris-club\", \"webql\", now)"
+---
+Ok(
+    [
+        Object {
+            "id": Number(1),
+            "updated_at": String("DATE"),
+        },
+        Object {
+            "id": Number(2),
+            "updated_at": String("DATE"),
+        },
+        Object {
+            "id": Number(3),
+            "updated_at": String("DATE"),
+        },
+    ],
+)

@@ -5,10 +5,11 @@ WebQL is a library that allows to get data from multiple resources or JSON and f
 ## Usage 
 ```toml
 [dependencies]
-webql = { version = "0.1.0", features = ["github] }
+webql = { version = "0.1.0" }
 ```
 
-* Enable `github` feature flag for filter pull request data.
+### Feature flags
+* `github` feature flag for filter pull request data.
 
 # Examples
 ```rs

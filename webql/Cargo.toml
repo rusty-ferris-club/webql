@@ -5,12 +5,12 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Elad Kaplan <kaplan.elad@gmail.com>"]
 license = "Apache-2.0"
-description = ""
+description = "WebQL is a library that allows to get data from multiple resources or JSON and filter the result"
 homepage = "https://github.com/rusty-ferris-club/webql"
 repository = "https://github.com/rusty-ferris-club/webql"
 documentation = "https://docs.rs/webql/latest/webql"
 readme = "../README.md"
-keywords = []
+keywords = ["webql"]
 
 [lib]
 name = "webql"
